@@ -19,11 +19,13 @@ class BlowfishEncrypter implements EncrypterContract
         $this->encrypter->setKey($this->key);
     }
 
+    // 暗号化処理
     public function encrypt($value, $serialize = true)
     {
         return $this->encrypter->encrypt($value);
     }
 
+    // 復号化処理
     public function decrypt($payload, $unserialize = true)
     {
         return $this->encrypter->decrypt($payload);
