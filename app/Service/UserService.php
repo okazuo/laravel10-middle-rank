@@ -4,21 +4,36 @@ declare(strict_type=1);
 
 namespace App\Service;
 
-use App\Models\User;
-use PhpParser\Node\Identifier;
+use App\Repository\UserRepositoryInterface;
 
 
 class UserService
 {
-    public function retrieve (int $identifier)
+    protected $userRepository;
+    public function __construct(UserRepositoryInterface $userRepository)
     {
-        $user = User::find($identifier);
-        $addObject = $user->addObject = '日本';
-        $user->append($addObject);
+        $this->userRepository = $userRepository;
+    }
+
+    public function retrieve(int $identifier)
+    {
+        $user = $this->userRepository->find($identifier);
+        $addObject = $user['addObject'] = '日本';
+        $user[] = $addObject;
         $name = 'たろう';
         return [
             'user' => $user,
             'name' => $name,
         ];
     }
+
+    // $user = User::find($identifier);
+    // $addObject = $user->addObject = '日本';
+    // $user->append($addObject);
+    // $name = 'たろう';
+    // return [
+    //     'user' => $user,
+    //     'name' => $name,
+        // ];
+
 }

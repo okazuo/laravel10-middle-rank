@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\BlowfishEncrypter;
+use App\Repository\UserRepository;
+use App\Repository\UserRepositoryInterface;
 use Illuminate\Encryption\MissingAppKeyException;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -16,9 +18,12 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('encrypter', function($app) {
             $config = $app->make('config')->get('app');
-
             return new BlowfishEncrypter($this->parseKey($config));
         });
+
+        $this->app->bind(
+            UserRepositoryInterface::class, UserRepository::class
+        );
     }
 
     public function parseKey(array $config)

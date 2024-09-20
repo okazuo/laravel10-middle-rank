@@ -9,12 +9,12 @@
 <body>
     <p>userディレクトリのindexビューファイルの表示完了</p>
     <ul>
-        <li>id:{{$user->id}}</li>
-        <li>名前:{{$user->name}}</li>
-        <li>メールアドレス:{{$user->email}}</li>
-        <li>登録日時:{{$user->created_at}}</li>
-        <li>更新日時:{{$user->updated_at}}</li>
+        <li>id:{{$user['id']}}</li>
+        <li>名前:{{$user['name']}}</li>
+        <li>メールアドレス:{{$user['email']}}</li>
+        <li>登録日時:{{$user['created_at']}}</li>
+        <li>更新日時:{{$user['updated_at']}}</li>
     </ul>
-    <p>管理人：{{$user->addObject}} {{$name}}</p>
+    <p>管理人：{{$user['addObject']}} {{$name}}</p>
 </body>
 </html>
