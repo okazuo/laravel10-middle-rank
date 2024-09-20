@@ -15,5 +15,6 @@
         ゲストさん</p>
         <p><a href="/register">新規登録</a><br><a href="/login">ログイン</a></p>
     @endif
+    <a href="{{route('user.index',['id' => 1])}}">userコントローラのインデクスメソッド実行 -> ビューの</a>
 </body>
 </html>
