@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,4 +28,5 @@ Route::get('/logout',[LoginController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
 
-Route::get('/home/{id}',[UserController::class, 'index'])->name('user.index');
+Route::get('/show',[UserController::class, 'index'])->name('user.index');
+Route::post('/upload', [UploadController::class,'store']);

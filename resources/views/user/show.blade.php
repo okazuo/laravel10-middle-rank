@@ -22,6 +22,5 @@
     <div style="white-space: pre-wrap">
 {{$requests}}
     </div>
-
 </body>
 </html>
