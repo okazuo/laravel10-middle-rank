@@ -16,5 +16,12 @@
         <li>更新日時:{{$user['updated_at']}}</li>
     </ul>
     <p>管理人：{{$user['addObject']}} {{$name}}</p>
+    <div>
+        -----------------------------------
+    </div>
+    <div style="white-space: pre-wrap">
+{{$requests}}
+    </div>
+
 </body>
 </html>
