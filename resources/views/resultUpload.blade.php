@@ -9,7 +9,7 @@
 <body>
     <p>アップロード完了</p>
     <div>
-        {{$requests}}
+リクエストオブジェクトを利用してファイル名を取得：{{$requests}}
     </div>
 </body>
 </html>
