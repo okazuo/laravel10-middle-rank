@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Service\UserService;
 use Illuminate\Support\Facades\Request;
-use Illuminate\Http\Request as HttpRequest;
+use App\Http\Requests\NumRequest;
 
 class UserController extends Controller
 {
@@ -14,7 +14,7 @@ class UserController extends Controller
     }
 
     // 入力値をjson形式で確認。
-    public function index()
+    public function index(NumRequest $request)
     {
         $id = auth()->id();
         $result = $this->service->retrieve(intval($id));

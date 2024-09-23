@@ -15,12 +15,17 @@
         ゲストさん</p>
         <p><a href="/register">新規登録</a><br><a href="/login">ログイン</a></p>
     @endif
+
     <div style="border: 1px solid">
         <div>
             <p>リクエストをjsonで確認</p>
             <form action="{{route('user.index')}}" method="get"” >
                 <p>variable100<input type="text" name='variable100'></p>
-                <p>num<input type="text" name='num'></p>
+                <p>num<input type="text" name='num'>
+                </p>
+                @foreach ($errors->get('num') as $error)
+                    {{ $error }}<br>
+                @endforeach
                 <button type="submit" >getリクエスト</button>
             </form>
         </div>
@@ -35,7 +40,7 @@
             @if ($errors->any())
                 <div class="alert alert-danger">
                 <ul>
-                @foreach ($errors->all() as $error)
+                @foreach ($errors->get('textFile') as $error)
                     <li>{{ $error }}</li>
                 @endforeach
                 </ul>
