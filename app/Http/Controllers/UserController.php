@@ -21,7 +21,8 @@ class UserController extends Controller
         // Requestの実態を確認
         $requests['Request::get(\'id\',\'hoge\')'] = Request::get('id','hoge');
         $requests['Request::all()'] = Request::all();
-        $requests['Request::only(\'varriable100\',\'id\')'] = Request::only('variable100','age');
+        $requests['Request::only(\'varriable100\',\'age\')'] = Request::only('variable100','age');
+
         return view('user.show',[
             'user' => $result['user'],
             'name' => $result['name'],

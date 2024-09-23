@@ -8,5 +8,8 @@
 </head>
 <body>
     <p>アップロード完了</p>
+    <div>
+        {{$requests}}
+    </div>
 </body>
 </html>
