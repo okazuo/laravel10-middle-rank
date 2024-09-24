@@ -8,9 +8,11 @@
 </head>
 <body>
     <div>
-        <p>入力値</p>
-        @foreach ($requestList as $request)
-            <p>{{$request}}</p>
+        <h1>入力値</h1>
+        @foreach ($requestList as $key => $request)
+        @if (isset($request))
+        <p>{{$key}}:{{$request}}</p>
+        @endif
         @endforeach
     </div>
 </body>

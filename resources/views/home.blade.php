@@ -54,9 +54,11 @@
         <p>入力値のバリデーション試験</p>
         <form action="{{ url('/validate/index')}}" method="post">
         @csrf
-            <p>タイトル<input type="text" name=title></p>
-            <p>ボデイ<input type="text" name=body></p>
-            <p>日付<input type="date" name=publish_at></p>
+            <p>タイトル<input type="text" name="title"></p>
+            <p>ボデイ<input type="text" name="body"></p>
+            <p>暗証番号<input type="number" name="number"></p>
+            <p>暗証番号（確認用）<input type="number" name="number_confirmation"></p>
+            <p>日付<input type="date" name="publish_at"></p>
             <p><input type="submit" value="次へ"></p>
         </form>
 
