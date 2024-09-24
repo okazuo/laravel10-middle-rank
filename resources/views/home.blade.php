@@ -31,8 +31,7 @@
         </div>
     </div>
 
-    <div>　</div>
-    <div style="border: 1px solid">
+    <div style="border: 1px solid;margin-top:10px">
         <p>ファイルアップロード確認</p>
         <form action="{{ url('/upload') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -49,6 +48,18 @@
             <input type="file" class="form-control" name="textFile">
             <p><input type="submit" value="アップロード"></p>
         </form>
+    </div>
+
+    <div style="border: 1px solid;margin-top:10px">
+        <p>入力値のバリデーション試験</p>
+        <form action="{{ url('/validate/index')}}" method="post">
+        @csrf
+            <p>タイトル<input type="text" name=title></p>
+            <p>ボデイ<input type="text" name=body></p>
+            <p>日付<input type="date" name=publish_at></p>
+            <p><input type="submit" value="次へ"></p>
+        </form>
+
     </div>
 </body>
 </html>

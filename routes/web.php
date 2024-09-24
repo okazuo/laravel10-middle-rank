@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\ValidateCheckController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,3 +31,4 @@ Route::get('/logout',[LoginController::class, 'logout'])
 
 Route::get('/show',[UserController::class, 'index'])->name('user.index');
 Route::post('/upload', [UploadController::class,'store']);
+Route::post('/validate/index', [ValidateCheckController::class,'index']);
