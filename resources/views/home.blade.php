@@ -63,6 +63,11 @@
                 {{$errors->first('body')}}
                 @endif
             </p>
+            <p>年齢<input type="number" name="age" value="{{ old('age') }}">
+                @if ($errors->has('age'))
+                {{$errors->first('age')}}
+                @endif
+            </p>
             <p>暗証番号<input type="number" name="number">
                 @if ($errors->has('number'))
                 {{$errors->first('number')}}
