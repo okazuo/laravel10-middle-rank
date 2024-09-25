@@ -22,7 +22,17 @@ class NumRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'num' => ['required', 'integer', 'digits_between:0,10'],
+            'variable100' => 'required|string',
+            'num' => 'required|integer|digits_between:0,10',
+        ];
+    }
+
+    public function messages(){
+        return [
+            'variable100.required' => 'ここは必須項目っす',
+            'num.required' => 'ここは必須項目っす',
+            'num.integer' => '数字でお願いします',
+            'num.digits_between' => '0~10桁で入力を頼むぜ',
         ];
     }
 }

@@ -29,6 +29,8 @@ Route::get('/logout',[LoginController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
 
+Route::middleware('auth')->group(function () {
 Route::get('/show',[UserController::class, 'index'])->name('user.index');
 Route::post('/upload', [UploadController::class,'store']);
 Route::post('/validate/index', [ValidateCheckController::class,'index']);
+});
