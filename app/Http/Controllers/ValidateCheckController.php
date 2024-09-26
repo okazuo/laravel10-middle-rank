@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\TextAction;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 class ValidateCheckController extends Controller
 {
@@ -15,6 +17,9 @@ class ValidateCheckController extends Controller
             'number' => 'confirmed',
             'publish_at' => 'nullable|date',
         ];
+
+        $viewAction = new ViewAction();
+        $viewAction = $viewAction($request);
 
 
         Validator::extend('ascii_alpha', function($attribute, $value, $parameters)
