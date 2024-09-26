@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response as IlluminateResponse;
 use Illuminate\Support\Facades\Response;
 use function response;
-use function view;
 
 class TextAction extends Controller
 {
@@ -21,7 +20,6 @@ class TextAction extends Controller
                 'content-type' => 'text/plain'
             ]
         );
-        dd($response);
         return $response;
     }
 }

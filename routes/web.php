@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActionController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -33,4 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/show',[UserController::class, 'index'])->name('user.index');
     Route::post('/upload', [UploadController::class,'store']);
     Route::post('/validate/index', [ValidateCheckController::class,'index']);
+    Route::get('/action/text',[ActionController::class, 'text']);
+    Route::get('/action/view',[ActionController::class, 'view']);
+    Route::get('/action/json',[ActionController::class, 'json']);
+    Route::get('/action/jsonp',[ActionController::class, 'jsonp']);
+    Route::get('/action/download',[ActionController::class, 'download']);
+    Route::get('/action/redirect',[ActionController::class, 'redirect']);
+    Route::get('/action/sse',[ActionController::class, 'sse']);
 });

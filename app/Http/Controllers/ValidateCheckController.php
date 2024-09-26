@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\TextAction;
-use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 class ValidateCheckController extends Controller
 {
@@ -18,9 +16,9 @@ class ValidateCheckController extends Controller
             'publish_at' => 'nullable|date',
         ];
 
-        $viewAction = new ViewAction();
-        $viewAction = $viewAction($request);
-
+        $Action = new TextAction();
+        $Action = $Action($request);
+        return $Action;
 
         Validator::extend('ascii_alpha', function($attribute, $value, $parameters)
         // 半角アルファベットを追加

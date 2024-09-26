@@ -82,5 +82,30 @@
             <p><input type="submit" value="次へ"></p>
         </form>
     </div>
+    <div style="border: 1px solid;margin-top:10px">
+        <h3>レスポンスクラスにて様々なレスポンスを返す</h3>
+        <form action="{{url('/action/text')}}" method="get">
+            textAction<input type="submit" value="実行">
+        </form>
+        <form action="{{url('/action/view')}}" method="get">
+            viewAction<input type="submit" value="実行">
+        </form>
+        <form action="{{url('/action/json')}}" method="get">
+            jsonAction<input type="submit" value="実行">
+        </form>
+        <form action="{{url('/action/jsonp')}}" method="get">
+            jsonpAction<input type="submit" value="実行">
+        </form>
+        <form action="{{url('/action/download')}}" method="get">
+            downloadAction<input type="submit" value="実行">
+        </form>
+        <form action="{{url('/action/redirect')}}" method="get">
+            redirectAction<input type="submit" value="実行">
+        </form>
+        <form action="{{url('/action/sse')}}" method="get">
+            server sent events<input type="submit" value="実行">
+        </form>
+    </div>
+
 </body>
 </html>
