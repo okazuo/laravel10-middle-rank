@@ -105,6 +105,9 @@
         <form action="{{url('/action/sse')}}" method="get">
             server sent events<input type="submit" value="実行">
         </form>
+        <form action="{{url('/payload')}}" method="get">
+            REST API レスポンス<input type="submit" value="実行">
+        </form>
     </div>
 
 </body>

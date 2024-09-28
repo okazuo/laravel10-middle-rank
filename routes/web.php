@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ValidateCheckController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticlePayloadAction;
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,4 +42,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/action/download',[ActionController::class, 'download']);
     Route::get('/action/redirect',[ActionController::class, 'redirect']);
     Route::get('/action/sse',[ActionController::class, 'sse']);
+    Route::get('/payload',[ArticlePayloadAction::class, '__invoke']);
 });
